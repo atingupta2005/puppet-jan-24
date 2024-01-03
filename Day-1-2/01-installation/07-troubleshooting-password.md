@@ -11,7 +11,7 @@
 - On the node running console services (usually your primary server), log in as root.
 - To reset the console admin password, run:
 ```
-sudo puppet infrastructure console_password --password=<MY_PASSWORD>
+sudo puppet infrastructure console_password --password=admin123
 ```
 
 ## Troubleshooting PE admin account access
