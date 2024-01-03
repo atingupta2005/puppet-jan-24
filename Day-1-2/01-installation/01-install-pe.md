@@ -44,7 +44,7 @@ sudo hostnamectl set-hostname app1-vm-0-girkys.eastus.cloudapp.azure.com --trans
 hostnamectl
 ```
 
-## Configure Puppet before installation (Optional)
+## Configure Puppet before installation (Required)
 ```
 nano conf.d/pe.conf
 ```
@@ -73,7 +73,7 @@ sudo puppet agent -t
 ```
 
 
-## Configure
+## Configure (Optional)
 ```
 puppet -V
 sudo cat /etc/puppetlabs/puppet/puppet.conf
