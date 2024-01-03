@@ -1,33 +1,16 @@
 # Adhoc Commands
-## Bootstrap client: Tasks that bootstrap or install Puppet on the agent node
+## Bootstrap client: Tasks that bootstrap or install Puppet on the agent node  (On node)
 ```
-sudo puppet agent -t --server <puppet master>
+sudo puppet agent -t --server <puppet master ip>
 sudo puppet agent -t --server puppet
 ```
 
-## Write a manifest
+## Write a manifest (On Server)
 ```
-sudo touch /etc/puppetlabs/code/environments/production/manifests/sample.pp
-```
-
-## Open client machine and check if we can access this file from there
- - # Test the connection
-```
-sudo /opt/puppetlabs/bin/puppet agent -t
-```
-
-## Open master server and put some content in the sample file
-```
-sudo vim /etc/puppetlabs/code/environments/production/manifests/sample.pp
+sudo nano /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
 ```
-node '<node-host-name>'	{
- package { 'git':
-        ensure=> intalled,
- }
-}
-
 node 'default'	{
 	$packages = ['telnet', 'tree', 'git', 'zsh']
 	package { $packages:
@@ -36,115 +19,77 @@ node 'default'	{
 }
 ```
 
-## Open Client Machine and test
+## Open Client Machine and test (On node)
 ```
 sudo /opt/puppetlabs/bin/puppet agent --test
 ```
 
-## Verify the services
+## Verify the services (On node)
 ```
 git
 tree
 ```
 
-
-## Displaying facts:
-```
-facter              # All system facts
-facter -p           # All system and Puppet facts
-facter -y           # YAML
-facter -j           # JSON
-facter <name>  # A specific fact
-facter timezone
-```
-
-## Managing certificates:
-```
-puppetserver ca list
-puppetserver ca list --all
-puppetserver ca sign <name>
-puppetserver ca clean <name> #Removes cert
-```
-
-## Managing nodes:
-```
-puppet node clean <name> #Removes node + cert
-```
-
-## Managing modules:
-```
-puppet module list
-puppet module install <name>
-puppet module uninstall <name>
-puppet module upgrade <name>
-```
-
-## Inspecting resources and types:
-```
-puppet describe -l
-puppet resource <type name>
-puppet resource service
-```
-
-## To check the version
-```
-puppet --version
-```
-
-## To remove packages
+## To remove packages (Manifest On server)
 ```
 package { 'apache2.0-common':
 	ensure => absent,
 }
 ```
 
-## To update packages
+## To update packages(Manifest On server)
 ```
 package { 'puppet':
 	ensure => latest,
 }
 ```
 
-## To start service at the boot time
+
+## Displaying facts: (On node)
 ```
-service { 'nginx':
-		ensure => running,
-		enable => true, #false disables auto-startup
-}
+facter              # All system facts
+facter -y           # YAML
+facter -j           # JSON
+facter timezone  # A specific fact
 ```
 
-## To set to a specific version
+## Managing modules: (On server)
+ - https://forge.puppet.com/
 ```
-package { 'nginx':
-	ensure => '1.1.18-1ubuntu0.1',
-}
-```
-
-## Install Apache
-```
-sudo puppet module list
-sudo puppet module install puppetlabs/mysql
-sudo puppet apply -e "include mysql::server"
-telnet localhost 3306
-sudo puppet apply -e "include mysql::server"
+puppet module list
+puppet module install <name>		  # puppetlabs/mysql
+puppet module uninstall <name>  # puppetlabs/mysql
+puppet module upgrade <name>    # puppetlabs/mysql
 ```
 
-## TimeSync
- - Ideally, we have accurate time on the server and agents. We can test Puppet from the command line to ensure Chronyd is installed and running
+## Inspecting resources and types:(On server)
 ```
-puppet apply -e 'package { "chrony": ensure => installed }'
-puppet apply -e 'service { "chronyd": ensure => running , enable => true }'
+puppet describe -l
+puppet resource <type name>
+puppet resource service
 ```
 
-## Idempotent
+## To check the version (On server)
+```
+puppet --version
+```
+
+## Install Package (On server)
+```
+puppet apply -e 'package { "tree": ensure => installed }'
+```
+
+## Idempotent (On server)
  - Puppet, being Idempotent, allows the command to run many times and only actions if we do not meet the configuration requirement
 ```
-puppet apply -e 'service { "chronyd": ensure => running , enable => true }'
-systemctl stop chronyd
-puppet apply -e 'service { "chronyd": ensure => running , enable => true }'
+sudo puppet apply -e 'package { "tree": ensure => installed }'
+tree .
+sudo puppet apply -e 'package { "tree": ensure => installed }'
+sudo apt remove tree -y
+sudo puppet apply -e 'package { "tree": ensure => installed }'
 ```
 
-# Remove
+# Remove (On server)
 ```
-puppet apply -e 'package { "chrony": ensure => absent }'
+puppet apply -e 'package { "tree": ensure => absent }'
 ```

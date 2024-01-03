@@ -6,7 +6,7 @@
  - A simple template like this may work for the /etc/motd file. We can test the result with puppet epp render
  - Connect to the Server
 ```
-vim test.epp
+nano test.epp
 ```
 
 ```
