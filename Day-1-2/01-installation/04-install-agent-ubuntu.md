@@ -11,14 +11,23 @@ sudo su
 cat /etc/hosts
 ```
 
-## Replace IP with IP of Puppet Master node
+## Replace IPs, DNS names with that of Puppet Master node
 ```
+echo 20.163.253.233 puppet app1-vm-0-girkys.eastus.cloudapp.azure.com puppetmaster devlinux-0  >> /etc/hosts
 echo 10.0.0.4 puppet >> /etc/hosts
 exit
 ```
 
 ```
 cat /etc/hosts
+```
+
+## Install Puppet agent by downloading the corresponding agent using below URL:
+- https://www.puppet.com/downloads/puppet-enterprise
+```
+cd ~
+wget <URL>
+sudo apt install ./<file_name>
 ```
 
 ```

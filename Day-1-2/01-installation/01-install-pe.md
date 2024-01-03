@@ -5,7 +5,7 @@
 
 ## Remove PE
 ```
-cd puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
+cd ~/puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
 sudo ./puppet-enterprise-uninstaller
 ```
 
@@ -31,9 +31,28 @@ cd puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
   - Disable firewall on the puppet master
   - Run puppet agent -t
 
+
+```
+sudo hostnamectl set-hostname app1-vm-0-girkys.eastus.cloudapp.azure.com --static
+```
+
+```
+sudo hostnamectl set-hostname app1-vm-0-girkys.eastus.cloudapp.azure.com --transient
+```
+
+```
+hostnamectl
+```
+
 ## Configure Puppet before installation (Optional)
 ```
-cat conf.d/pe.conf
+nano conf.d/pe.conf
+```
+
+## Mention the host name as below:
+- Note: Mention host names as per the output of command - hostnamectl
+```
+"pe_install::puppet_master_dnsaltnames": ["puppet", "app1-vm-0-girkys.eastus.cloudapp.azure.com", "puppetmaster", "devlinux-0"]
 ```
 
 ## Install Puppet Server
@@ -41,16 +60,18 @@ cat conf.d/pe.conf
 sudo ./puppet-enterprise-installer
 ```
 
-```
-sudo su -
-source /etc/profile.d/puppet-agent.sh
-exit
-```
-
 ## Set password
 ```
 sudo puppet infrastructure console_password --password=admin123
 ```
+
+
+```
+sudo puppet agent -t
+sudo puppet agent -t
+sudo puppet agent -t
+```
+
 
 ## Configure
 ```

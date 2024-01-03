@@ -12,8 +12,7 @@ sudo /opt/puppetlabs/bin/puppetserver ca clean --certname <CERTNAME>
 puppet ssl clean
 sudo puppet resource service puppet ensure=stopped
 puppet config print ssldir --section agent
-ls ~/.puppetlabs/etc/puppet/ssl
-mv ~/.puppetlabs/etc/puppet/ssl ~/.puppetlabs/etc/puppet/ssl_bkp1
+sudo rm -rf ~/.puppetlabs/etc/puppet/ssl
 ls ~/.puppetlabs/etc/puppet/ssl
 ```
 
