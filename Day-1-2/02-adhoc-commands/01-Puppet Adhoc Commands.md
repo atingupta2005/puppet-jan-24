@@ -89,7 +89,21 @@ sudo apt remove tree -y
 sudo puppet apply -e 'package { "tree": ensure => installed }'
 ```
 
-# Remove (On server)
+## Remove (On server)
 ```
 puppet apply -e 'package { "tree": ensure => absent }'
+```
+
+
+## Managing certificates:
+```
+puppetserver ca list
+puppetserver ca list --all
+puppetserver ca sign <name>
+puppetserver ca clean <name> #Removes cert
+```
+
+## Managing nodes:
+```
+puppet node clean <name> #Removes node + cert
 ```
