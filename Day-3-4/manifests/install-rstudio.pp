@@ -1,13 +1,17 @@
-include wget
+$mypackages = ['r-base', 'openssl', 'zip', 'tree', 'wget', 'unzip', 'gdebi-core', 'libclang-dev']
 
-package { [ 'r-base', 'openssl', 'zip', 'tree', 'wget', 'unzip', 'gdebi-core', 'install r-base', ]: 
-	ensure => installed,
-	before => Exec['apt update'],
+package { $mypackages: 
+	ensure => latest,
+}
+
+file { '/tmp/rstudio-server-2023.12.0-369-amd64.deb':
+  source => [
+    "https://download2.rstudio.org/server/focal/amd64/rstudio-server-2023.12.0-369-amd64.deb",
+  ]
 }
 
 package {'rstudio':
   provider => dpkg,
   ensure => installed,
-  before => Exec['apt update'],
-  source   => https://download2.rstudio.org/server/focal/amd64/rstudio-server-2023.12.0-369-amd64.deb,
+  source   => '/tmp/rstudio-server-2023.12.0-369-amd64.deb',
 }

@@ -11,6 +11,9 @@ puppet apply --noop manifests/create-user.pp
  
 puppet apply manifests/create-user.pp
 
+wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-3-4/manifests/install-rstudio.pp
+sudo puppet apply install-rstudio.pp
+
 ## Modules
 cd /etc/puppetlabs/code/environments/production/modules
 
