@@ -50,3 +50,8 @@ sudo ls /etc/puppetlabs/code/environments/production/manifests
 sudo puppet agent -t
 
 curl localhost:8080
+
+
+## To listen on all ports
+## open /etc/tomcat9/server.xml and change to 
+ <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" address="0.0.0.0" />
