@@ -43,6 +43,8 @@ sudo ls /etc/puppetlabs/code/environments/production/modules
 
 sudo cp ~/puppet-jan-24/Day-3-4/modules/node-def-1.pp /etc/puppetlabs/code/environments/production/manifests/node-def-1.pp
 
+sudo mv /etc/puppetlabs/code/environments/production/manifests/site.pp /etc/puppetlabs/code/environments/production/manifests/site.pp.bkp
+
 sudo ls /etc/puppetlabs/code/environments/production/manifests
 
 sudo puppet agent -t

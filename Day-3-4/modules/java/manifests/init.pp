@@ -1,6 +1,6 @@
 class java {
 
-  package { [ 'epel-release', 'java-1.7.0-openjdk'] : 
+  package { [ 'epel-release', 'openjdk-8-jdk'] : 
     ensure => installed,
   }
 
