@@ -1,4 +1,4 @@
-node 'node1' {
+node 'Default' {
 
    include java
    include tomcat::install

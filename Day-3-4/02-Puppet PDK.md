@@ -1,10 +1,10 @@
 # PDK
 ## On Ubuntu
 ```
-wget https://apt.puppet.com/puppet-tools-release-bionic.deb
-sudo dpkg -i puppet-tools-release-bionic.deb
+wget https://apt.puppet.com/puppet-tools-release-focal.deb
+sudo dpkg -i puppet-tools-release-focal.deb
 sudo apt-get update
-sudo apt-get install pdk -y
+sudo apt-get install pdk
 ```
 
 ## Basic usage
