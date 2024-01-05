@@ -49,12 +49,13 @@ python3.8 -m venv /pyenv
 ```
 
 ```
-source /pyenv/bin/activate
+sudo su
 ```
 
 ```
-sudo su
+source /pyenv/bin/activate
 ```
+
 
 ```
 cd /etc/puppetlabs/code
