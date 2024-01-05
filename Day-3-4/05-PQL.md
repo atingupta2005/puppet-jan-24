@@ -28,12 +28,6 @@ puppet query "facts {node_state = 'inactive' or node_state = 'active'}" | grep p
 puppet query "nodes[count()]{catalog_environment = 'production'}"
 ```
 
-
-### Return the: certname, timestamp, resource type, resource title, message and old and new values from events where the status of the event was success
-```
-puppet query "events[certname, timestamp, resource_type, resource_title, message, old_value, new_value]{latest_report? = true and status='success'}"
-```
-
 ### Return the count of nodes where the osfamily is RedHat
 ```
 puppet query "facts[count()]{name='osfamily' and value='RedHat'}"
