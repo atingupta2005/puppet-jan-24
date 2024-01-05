@@ -37,12 +37,16 @@ cd puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
 
 ## Install Puppet Server
 ```
+sudo rstudio-server stop
+```
+
+```
 sudo ./puppet-enterprise-installer
 ```
 
 ## Set password
 ```
-sudo puppet infrastructure console_password --password=admin123
+sudo puppet infrastructure console_password --password=admin123htop
 ```
 
 ## Run Puppet agent 2 times
