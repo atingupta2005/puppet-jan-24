@@ -53,6 +53,10 @@ sudo su
 ```
 
 ```
+sudo rm -rf /pyenv
+```
+
+```
 source /pyenv/bin/activate
 ```
 
