@@ -37,12 +37,17 @@ sudo apt install -y python3.8-venv
 ```
 
 ```
+sudo rm -rf /pyenv
+```
+
+```
 sudo mkdir -p /pyenv
 ```
 
 ```
 sudo chmod -R 777 /pyenv
 ```
+
 
 ```
 python3.8 -m venv /pyenv
@@ -52,9 +57,6 @@ python3.8 -m venv /pyenv
 sudo su
 ```
 
-```
-sudo rm -rf /pyenv
-```
 
 ```
 source /pyenv/bin/activate
