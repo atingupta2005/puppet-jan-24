@@ -46,7 +46,7 @@ sudo ./puppet-enterprise-installer
 
 ## Set password
 ```
-sudo puppet infrastructure console_password --password=admin123htop
+sudo puppet infrastructure console_password --password=admin123
 ```
 
 ## Run Puppet agent 2 times
