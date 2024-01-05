@@ -29,7 +29,7 @@ curl http://localhost:8787
 
 ## Setup Jupyter 
 ```
-sudo apt install -y python3.9-venv python3-pip
+sudo apt install -y python3-pip
 ```
 
 ```
