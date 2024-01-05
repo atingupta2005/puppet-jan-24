@@ -100,7 +100,7 @@ puppet apply -e 'package { "tree": ensure => absent }'
 puppetserver ca list
 puppetserver ca list --all
 puppetserver ca sign <name>
-puppetserver ca clean <name> #Removes cert
+puppetserver ca clean --certname <name> #Removes cert
 ```
 
 ## Managing nodes:
