@@ -10,9 +10,9 @@ git clone https://github.com/atingupta2005/puppet-jan-24/
 cd ~/puppet-jan-24/Day-3-4
 puppet parser validate manifests/create-user.pp
  
-sudo puppet apply ./Puppet-Language/--noop manifests/create-user.pp
+sudo puppet apply --noop manifests/create-user.pp
  
-sudo puppet apply ./Puppet-Language/manifests/create-user.pp
+sudo puppet apply manifests/create-user.pp
 
 id deploy
 
