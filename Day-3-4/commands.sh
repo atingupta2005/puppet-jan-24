@@ -5,6 +5,8 @@ puppet help
  
 puppet resource user root
 
+cd 
+git clone https://github.com/atingupta2005/puppet-jan-24/
 cd ~/puppet-jan-24/Day-3-4
 puppet parser validate manifests/create-user.pp
  
@@ -17,7 +19,7 @@ id deploy
 # sudo dpkg --remove --force-all rstudio-server
 # sudo apt --fix-broken install
 
-sudo puppet apply manifests/install-rstudio.pp
+# sudo puppet apply manifests/install-rstudio.pp
 
 ## Modules
 cd ~
@@ -26,13 +28,11 @@ sudo dpkg -i puppet-tools-release-focal.deb
 sudo apt-get update
 sudo apt-get install pdk -y
 
-sudo su
+#sudo su
 cd /etc/puppetlabs/code/environments/production/modules
 
 pdk new module java
 pdk new module tomcat --skip-interview 
-
-exit
 
 ## Copy code of Java module
 cd ~

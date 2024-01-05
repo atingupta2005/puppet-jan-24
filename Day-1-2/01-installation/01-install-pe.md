@@ -24,6 +24,9 @@ sudo apt install -y zip unzip tree vim nano
 cd ~
 wget --content-disposition 'https://pm.puppet.com/cgi-bin/download.cgi?dist=ubuntu&rel=20.04&arch=amd64&ver=latest'
 tar -xvf puppet-enterprise-2023.5.0-ubuntu-20.04-amd64.tar.gz
+```
+
+```
 cd puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
 ```
 

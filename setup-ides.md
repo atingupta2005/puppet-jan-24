@@ -16,6 +16,12 @@ wget https://download2.rstudio.org/server/focal/amd64/rstudio-server-2023.12.0-3
 sudo apt install -y ./rstudio-server-2023.12.0-369-amd64.deb
 ```
 
+
+```
+sudo rstudio-server stop
+sudo rstudio-server start
+``````
+
 ```
 curl http://localhost:8787
 ```
@@ -56,6 +62,32 @@ pip install jupyter
 ```
 nohup jupyter notebook --ip 0.0.0.0 --port 8888  --allow-root  --NotebookApp.token='' --NotebookApp.password='' &
 ```
+
+```
+cat nohup.out | grep token
+```
+
+
+## Restart Jupyter
+```
+sudo su
+```
+
+```
+sudo pkill jupyter
+```
+
+```
+source /pyenv/bin/activate
+```
+
+```
+cd /etc/puppetlabs/code
+```
+
+```
+nohup jupyter notebook --ip 0.0.0.0 --port 8888  --allow-root  --NotebookApp.token='' --NotebookApp.password='' &
+
 
 ```
 cat nohup.out | grep token
