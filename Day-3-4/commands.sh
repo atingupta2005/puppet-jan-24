@@ -49,9 +49,37 @@ sudo ls /etc/puppetlabs/code/environments/production/manifests
 
 sudo puppet agent -t
 
-curl localhost:8080
 
-
-## To listen on all ports
-## open /etc/tomcat9/server.xml and change to 
- <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443" address="0.0.0.0" />
+## Puppet Language
+sudo puppet apply 01-Adding-a-resource-to-a-node/site.1.pp
+sudo puppet apply 02-Installing-configuring-and-starting-a-service/httpd.pp
+sudo puppet apply 03-Variables/site2.pp
+sudo puppet apply 04-Symlinks/php.pp
+sudo puppet apply 05-Using-inline-templates/chkrootkit.pp
+sudo puppet apply 06-Iterating-over-multiple-items/packages.1.pp
+sudo puppet apply 07-Using-hashes/hash.pp
+sudo puppet apply 07-Using-hashes/hash2.pp
+sudo puppet apply 07-Using-hashes/hashes.pp
+sudo puppet apply 08-Creating-arrays-with-the-split-function/split.1.pp
+sudo puppet apply 08-Creating-arrays-with-the-split-function/split.2.pp
+sudo puppet apply 09-Writing-powerful-conditional-statements/conditional.pp
+sudo puppet apply 10-Comparisons/test.pp
+sudo puppet apply 11-Using-regular-expressions-in-if-statements/arch.pp
+sudo puppet apply 11-Using-regular-expressions-in-if-statements/version.pp
+sudo puppet apply 12-Using-selectors-and-case-statements/case.pp
+sudo puppet apply 12-Using-selectors-and-case-statements/selector.pp
+sudo puppet apply 13-Regular-expressions/regex.pp
+sudo puppet apply 14-Defaults/default.pp
+sudo puppet apply 15-Using-the-in-operator/in.pp
+sudo puppet apply 16-Appending-to-and-concatenating-arrays/append.pp
+sudo puppet apply 16-Appending-to-and-concatenating-arrays/concat.pp
+sudo puppet apply 16-Appending-to-and-concatenating-arrays/packages.pp
+sudo puppet apply 17-Merging-hashes/merge.pp
+sudo puppet apply 18-Using-the-sensitive-type/sensitive.pp
+sudo puppet apply 19-Lambda-functions/lambda.pp
+sudo puppet apply 20-reduce/reduce.pp
+sudo puppet apply 21-filter/filter.pp
+sudo puppet apply 22-map/map.pp
+sudo puppet apply 23-slice/slice.1.pp
+sudo puppet apply 23-slice/slice.2.pp
+sudo puppet apply 24-each/each.pp

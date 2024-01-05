@@ -11,11 +11,7 @@ sudo apt-get install pdk
 - PDK can generate modules and classes, validate module metadata, style, and syntax, and run unit tests.
 
 ```
-alias cdpp="cd /etc/puppetlabs/code/environments/production/manifests"
-```
-
-```
-cdpp
+cd /etc/puppetlabs/code/environments/production/manifests
 ```
 
 ## Generate a module
@@ -36,9 +32,4 @@ tree .
 ### In the module's directory, run:
 ```
 pdk validate
-```
-
-## Run unit tests
-```
-pdk test unit
 ```
