@@ -1,3 +1,5 @@
-if $::mtu_eth0 <= 1500 {
-  notify {"Not Jumbo Frames": }
+if $facts['system_uptime']['seconds'] <= 1500 {
+  notify { "I'm using a value ${facts['system_uptime']['seconds']}": }
 }
+
+

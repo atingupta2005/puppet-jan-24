@@ -1,5 +1,5 @@
 node default {
-  package { 'httpd':
+  package { 'tree':
     ensure => 'installed' }
   }
-}
+

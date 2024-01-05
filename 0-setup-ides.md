@@ -1,5 +1,6 @@
 ## Setup R Studio
 ```
+sudo su
 sudo apt -y update
 sudo apt-get -y install r-base
 ```
@@ -44,11 +45,15 @@ sudo chmod -R 777 /pyenv
 ```
 
 ```
-python3 -m venv /pyenv
+python3.8 -m venv /pyenv
 ```
 
 ```
 source /pyenv/bin/activate
+```
+
+```
+sudo su
 ```
 
 ```
@@ -64,7 +69,7 @@ nohup jupyter notebook --ip 0.0.0.0 --port 8888  --allow-root  --NotebookApp.tok
 ```
 
 ```
-cat nohup.out | grep token
+curl localhost:8888
 ```
 
 
@@ -90,5 +95,6 @@ nohup jupyter notebook --ip 0.0.0.0 --port 8888  --allow-root  --NotebookApp.tok
 ```
 
 ```
-cat nohup.out | grep token
+curl localhost:8888
 ```
+
