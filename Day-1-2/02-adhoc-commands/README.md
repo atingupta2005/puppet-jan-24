@@ -1,21 +1,22 @@
-# Adhoc Commands
+# ADHOC Commands
+
 ## Bootstrap client: Tasks that bootstrap or install Puppet on the agent node  (On node)
 ```
-sudo puppet agent -t --server puppet
+sudo puppet agent -t
 ```
 
 ## Update Global manifest (On Server)
 ```
-sudo nano /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo rm /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
 ```
-node 'default'	{
-	$packages = ['telnet', 'tree', 'git', 'zsh']
-	package { $packages:
-	ensure => "installed"
-  }
-}
+sudo echo "node 'default'	{" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo " $packages = ['telnet', 'tree', 'git', 'zsh']" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo " package { $packages:" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "	ensure => 'installed'" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "  }" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "}" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
 ### Note: There should be only one default block. So update existing default block with the above code block
@@ -33,7 +34,8 @@ tree
 
 ## To remove packages (Manifest On server)
 ```
-sudo nano /etc/puppetlabs/code/environments/production/manifests/site.pp
+sed -i 's/installed/absent/g' /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo cat /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
 ```
@@ -58,21 +60,15 @@ facter timezone  # A specific fact
  - https://forge.puppet.com/
 ```
 puppet module list
-puppet module install <name>		  # puppetlabs/mysql
-puppet module uninstall <name>  # puppetlabs/mysql
-puppet module upgrade <name>    # puppetlabs/mysql
+puppet module install puppetlabs-mysql
+puppet module uninstall puppetlabs-mysql
+puppet module upgrade puppetlabs-mysql
 ```
 
 ## Inspecting resources and types:(On server)
 ```
 puppet describe -l
-puppet resource <type name>
 puppet resource service
-```
-
-## To check the version (On server)
-```
-puppet --version
 ```
 
 ## Install Package (On server)
@@ -103,4 +99,14 @@ puppetserver ca list --all
 puppetserver ca sign <name>
 sudo puppet node purge <CERTNAME>
 puppetserver ca clean --certname <name> #Removes cert
+```
+
+# Puppet Server Configuration (Server)
+ - Using the puppet config command we can view and set configuration parameters including the path to the manifest
+ - If the manifest is a directory then each manifest is processed in alphanumeric order
+
+# Print settings from puppet.confg file as well as the defaults
+```
+puppet config print
+puppet config print config
 ```
