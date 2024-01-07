@@ -53,3 +53,5 @@ sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/i
 sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules
 sudo puppet agent -t
+
+curl localhost:8080
