@@ -21,6 +21,9 @@ curl localhost:8080
 puppet apply 04-grafana_windows.pp
 curl http://localhost:3000/login
 sudo puppet apply 05-all_grafana-centos-windows.pp
+sudo systemctl start  grafana-server
+sudo systemctl status  grafana-server
+curl http://localhost:3000/login
 sudo puppet apply 06-linux_users.pp
 
 id exampleappdev
