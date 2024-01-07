@@ -29,3 +29,5 @@ pdk validate
 ```
 exit
 ```
+
+## Note: Refer to [commands.sh](./commands.sh) for other Puppet Programming commands for generating manifests and modules
