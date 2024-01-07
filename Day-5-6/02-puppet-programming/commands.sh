@@ -2,8 +2,8 @@
 ## Clone GIT Repo
 cd ~
 rm -rf ~/puppet-jan-24
-sudo yum install git -y
-sudo apt install git -y
+#sudo yum install git -y
+#sudo apt install git -y
 git clone https://github.com/atingupta2005/puppet-jan-24/
 
 cd ~/puppet-jan-24/Day-5-6/02-puppet-programming

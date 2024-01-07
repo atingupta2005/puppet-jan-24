@@ -3,7 +3,7 @@ case $facts['os']['family'] {
     $package_options = {
       'source' => 'https://dl.grafana.com/enterprise/release/grafana-enterprise-10.2.3.windows-amd64.msi'
     }
-    $service options = {
+    $service_options = {
       'logonaccount' => 'LocalSystem'
     }
     $file_options = {
@@ -14,7 +14,7 @@ case $facts['os']['family'] {
     $package_options = {
       'source' => 'https://dl.grafana.com/enterprise/release/grafana-enterprise-8.4.3-1.x86_64.rpm'
     }
-    $service options = ''
+    $service_options = ''
     $file_options = {
       'name' => '/etc/grafana/grafana.ini '
     }
