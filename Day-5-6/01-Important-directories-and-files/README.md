@@ -26,15 +26,10 @@
 
 ## Contents
 - The confdir contains several config files and the SSL data.
-
-- On all nodes, agent and primary server, the confdir contains the following directories and config files:
   - ssl directory: contains each node’s certificate infrastructure.
   - puppet.conf: Puppet’s main config file.
-  
-- On primary server nodes, and sometimes standalone nodes that run Puppet apply, the confdir also contains:
   - fileserver.conf: Configuration for additional fileserver mount points.
   - hiera.yaml: The global configuration for Hiera data lookup. Environments and modules can also have their own hiera.yaml files.
-
 
 
 # Main manifest directory
@@ -45,21 +40,9 @@
 puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
-
-## Specifying the manifest for primary Puppet server
-- The primary Puppet server uses the main manifest set by the current node's environment
-- By default, the main manifest for an environment is <ENVIRONMENTS DIRECTORY>/<ENVIRONMENT>/manifests
-- The default_manifest setting defaults to ./manifests
-
-- To check which manifest your primary server uses for a given environment, run:
-```
-puppet config print manifest --section server
-```
-
 ## Manifest directory behavior
 - When the main manifest is a directory, Puppet parses every .pp file in the directory in alphabetical order and evaluates the combined manifest
 - Puppet treats the directory as one manifest, so, for example, a variable assigned in the file 01_all_nodes.pp is accessible in node_web01.pp.
-
 
 
 # SSL directory (ssldir)
