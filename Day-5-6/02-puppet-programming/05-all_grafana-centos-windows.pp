@@ -1,7 +1,7 @@
 case $facts['os']['family'] {
   'windows': {
     $package_options = {
-      'source' => 'https://dl.grafana.com/oss/release/grafana-8.4.3.windows-amd64.msi'
+      'source' => 'https://dl.grafana.com/enterprise/release/grafana-enterprise-10.2.3.windows-amd64.msi'
     }
     $service options = {
       'logonaccount' => 'LocalSystem'
@@ -24,16 +24,10 @@ case $facts['os']['family'] {
 package { 'grafana':
   * => $package_options
 }
+
 service { 'grafana':
   ensure  => 'running',
   enable  => 'true',
   require => Package['grafana'],
   *       => $service_options
-}
-file { 'grafana.ini':
-  ensure  => 'file',
-  content => '[server]\nprotocol = HTTP\nhttp_port = 8080',
-  notify  => Service['grafana'],
-  require => Package['grafana'],
-  *       => $file_options
 }

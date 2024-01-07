@@ -1,8 +1,5 @@
-file { 'c:\inetpub\wwwroot':
+file { 'c:\www':
   ensure       => 'directory',
-  recurse      => true,
-  purge        => true,
-  recurselimit => '1'
 }
 
 
@@ -12,7 +9,7 @@ file { 'c:\page.html':
 }
 
 
-file { 'c:\inetpub\wwwroot\page':
+file { 'c:\www\page2.html':
   ensure       => 'file',
   source       => 'c:\page.html',
 }
