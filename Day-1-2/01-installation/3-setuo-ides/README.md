@@ -34,6 +34,7 @@ wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/
 sudo chmod a+x *.sh
 . ./2-restart-jupyter.sh
 exit
+sleep 5
 curl localhost:8888
 ```
 
