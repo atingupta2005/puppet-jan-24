@@ -1,11 +1,10 @@
 # Adhoc Commands
 ## Bootstrap client: Tasks that bootstrap or install Puppet on the agent node  (On node)
 ```
-sudo puppet agent -t --server <puppet master ip>
 sudo puppet agent -t --server puppet
 ```
 
-## Write a manifest (On Server)
+## Update Global manifest (On Server)
 ```
 sudo nano /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
@@ -18,6 +17,8 @@ node 'default'	{
   }
 }
 ```
+
+### Note: There should be only one default block. So update existing default block with the above code block
 
 ## Open Client Machine and test (On node)
 ```
@@ -32,15 +33,15 @@ tree
 
 ## To remove packages (Manifest On server)
 ```
-package { 'apache2.0-common':
-	ensure => absent,
-}
+sudo nano /etc/puppetlabs/code/environments/production/manifests/site.pp
 ```
 
-## To update packages(Manifest On server)
 ```
-package { 'puppet':
-	ensure => latest,
+node 'default'	{
+	$packages = ['telnet', 'tree', 'git', 'zsh']
+	package { $packages:
+	ensure => "absent"
+  }
 }
 ```
 
@@ -95,15 +96,11 @@ puppet apply -e 'package { "tree": ensure => absent }'
 ```
 
 
-## Managing certificates:
+## Managing certificates (On server):
 ```
 puppetserver ca list
 puppetserver ca list --all
 puppetserver ca sign <name>
+sudo puppet node purge <CERTNAME>
 puppetserver ca clean --certname <name> #Removes cert
-```
-
-## Managing nodes:
-```
-puppet node clean <name> #Removes node + cert
 ```
