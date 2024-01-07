@@ -33,6 +33,7 @@ rm 2-restart-jupyter.sh*
 wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/01-installation/3-setuo-ides/2-restart-jupyter.sh
 sudo chmod a+x *.sh
 . ./2-restart-jupyter.sh
+exit
 curl localhost:8888
 ```
 
