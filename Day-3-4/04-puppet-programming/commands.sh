@@ -3,6 +3,7 @@
 ## Clone GIT Repo
 ```
 cd ~
+rm -rf ~/puppet-jan-24
 git clone https://github.com/atingupta2005/puppet-jan-24/
 cd ~/puppet-jan-24/Day-3-4
 ```
