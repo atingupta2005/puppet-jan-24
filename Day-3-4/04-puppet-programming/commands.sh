@@ -1,18 +1,24 @@
 # Puppet Programming
 
+## Clone GIT Repo
+```
+cd ~
+git clone https://github.com/atingupta2005/puppet-jan-24/
+cd ~/puppet-jan-24/Day-3-4
+```
+
 ## Run Various Manifests
-sudo puppet apply 01-hash.pp
-sudo puppet apply 02-hash2.pp
-sudo puppet apply 03-hashes.pp
-sudo puppet apply 04-split.1.pp
-sudo puppet apply 05-split.2.pp
-sudo puppet apply 06-conditional.pp
-sudo puppet apply 07-comparisions-test.pp
-puppet parser validate manifests/08-create-user
-sudo puppet apply --noop manifests/08-create-user
-sudo puppet apply manifests/08-create-user
+sudo puppet apply 04-puppet-programming/manifests/01-hash.pp
+sudo puppet apply 04-puppet-programming/manifests/02-hash2.pp
+sudo puppet apply 04-puppet-programming/manifests/03-hashes.pp
+sudo puppet apply 04-puppet-programming/manifests/04-split.1.pp
+sudo puppet apply 04-puppet-programming/manifests/05-split.2.pp
+sudo puppet apply 04-puppet-programming/manifests/06-conditional.pp
+sudo puppet apply 04-puppet-programming/manifests/07-comparisions-test.pp
+sudo puppet parser validate 04-puppet-programming/manifests/08-create-user.pp
+sudo puppet apply 04-puppet-programming/manifests/08-create-user.pp
 id deploy
-puppet resource user deploy
+sudo puppet resource user deploy
 
 
 ## Install PDK
