@@ -3,6 +3,15 @@
 - Refer:
   - https://puppet.com/try-puppet/puppet-enterprise/download/
 
+
+## Ren below single command
+```
+chmod a+x 02-install-pe.sh
+. ./02-install-pe.sh
+```
+
+## In case we need to install step by step, then run below commands
+
 ## Remove PE
 ```
 cd ~/puppet-enterprise-2023.5.0-ubuntu-20.04-amd64
