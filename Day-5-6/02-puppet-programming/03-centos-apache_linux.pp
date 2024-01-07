@@ -3,7 +3,7 @@ package { 'httpd':}
 service { 'httpd':
   ensure  => 'running',
   enable  => 'true',
-  require => package['httpd']
+  require => Package['httpd']
 }
 
 file { '/var/www/html/index.html ':
