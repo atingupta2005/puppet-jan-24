@@ -1,3 +1,12 @@
+## Setup PDK
+```
+wget https://apt.puppet.com/puppet-tools-release-focal.deb
+sudo dpkg -i puppet-tools-release-focal.deb
+sudo apt-get update
+sudo apt-get install pdk
+```
+
+
 ## Setup Jupyter 
 ```
 cd ~
@@ -46,3 +55,4 @@ wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/
 . ./4-restart-rstudio.sh
 curl localhost:8787
 ```
+
