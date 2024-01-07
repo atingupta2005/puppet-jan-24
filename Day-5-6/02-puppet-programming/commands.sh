@@ -17,3 +17,10 @@ sudo puppet apply 05-all_grafana-centos-windows.pp
 sudo puppet apply 06-linux_users.pp
 sudo puppet apply 07-all_grafana-centos-windows.pp
 sudo puppet apply 08-all_grafana_data_types-centos-windows.pp
+
+id exampleappdev
+id exampleapptest
+id exampleappprod
+
+# Note: Absolute path of puppet on Linux:
+/usr/local/bin/puppet

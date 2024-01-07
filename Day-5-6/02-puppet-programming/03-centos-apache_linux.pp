@@ -15,7 +15,7 @@ file { '/var/www/html/index.html ':
 
 file { '/etc/httpd/conf/httpd.conf ':
   ensure       => 'file',
-  source       => 'https://raw.githubusercontent.com/PacktPublishing/Puppet-7-for-DevOps-Engineering/main/ch3/httpd.conf',
+  source       => 'https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-5-6/02-puppet-programming/httpd.conf',
   notify       => Service['httpd'],
   require      => Package['httpd'],
   validate_cmd => '/usr/sbin/apache2 -t -f %'
