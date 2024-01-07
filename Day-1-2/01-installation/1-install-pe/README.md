@@ -4,7 +4,7 @@
   - https://puppet.com/try-puppet/puppet-enterprise/download/
 
 
-## Ren below single command
+## Ren below commands
 ```
 cd ~
 wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/01-installation/02-install-pe.sh
