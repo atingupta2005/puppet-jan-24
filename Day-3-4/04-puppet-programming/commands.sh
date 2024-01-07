@@ -19,7 +19,8 @@ sudo puppet apply 04-puppet-programming/manifests/07-comparisions-test.pp
 sudo puppet parser validate 04-puppet-programming/manifests/08-create-user.pp
 sudo puppet apply 04-puppet-programming/manifests/08-create-user.pp
 id deploy
-sudo puppet resource user deploy
+sudo puppet resource user | grep deploy
+sudo puppet resource package | grep tree
 
 
 ## Install PDK
