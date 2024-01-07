@@ -4,7 +4,7 @@
   - https://puppet.com/try-puppet/puppet-enterprise/download/
 
 
-## Ren below commands
+## Run below commands
 ```
 cd ~
 rm 02-install-pe.sh*
