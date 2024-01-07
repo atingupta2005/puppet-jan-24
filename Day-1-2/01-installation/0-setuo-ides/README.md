@@ -1,5 +1,6 @@
 ## Setup Jupyter 
 ```
+cd ~
 wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/01-installation/0-setuo-ides/1-install-jupyter-1.sh
 wget https://raw.githubusercontent.com/atingupta2005/puppet-jan-24/main/Day-1-2/01-installation/0-setuo-ides/1-install-jupyter-1.sh
 sudo chmod *.sh
