@@ -36,11 +36,10 @@ sudo /opt/puppetlabs/bin/puppet module install puppetlabs-chocolatey
 sudo /opt/puppetlabs/bin/puppet apply 5-packages/install_chocolatey_package.pp
 sudo /opt/puppetlabs/bin/puppet apply 5-packages/install_chocolatey_package_with_options.pp
 
-sudo /opt/puppetlabs/bin/puppet module install puppetlabs-selinux
+sudo /opt/puppetlabs/bin/puppet module install puppet-selinux
 sudo /opt/puppetlabs/bin/puppet apply 6-selinux/enable.pp
 
 sudo /opt/puppetlabs/bin/puppet apply 7-services/disabled_at_boot.pp
 sudo /opt/puppetlabs/bin/puppet apply 7-services/ensure_running.pp
 sudo /opt/puppetlabs/bin/puppet apply 7-services/ensure_stopped.pp
-sudo /opt/puppetlabs/bin/puppet apply 7-services/restart_when_file_changes.pp
 sudo /opt/puppetlabs/bin/puppet apply 7-services/running_at_boot.pp
