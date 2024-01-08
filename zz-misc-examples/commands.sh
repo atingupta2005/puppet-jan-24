@@ -1,3 +1,15 @@
+# Puppet Programming
+
+## Clone GIT Repo
+```
+cd ~
+rm -rf ~/puppet-jan-24
+git clone https://github.com/atingupta2005/puppet-jan-24/
+```
+
+## Run Various Manifests
+cd ~/puppet-jan-24/zz-misc-examples
+
 puppet apply 1-facts/using_facts_hash.pp
 puppet apply 2-files_and_directories/add_file_if_absent.pp
 puppet apply 2-files_and_directories/directory.pp
