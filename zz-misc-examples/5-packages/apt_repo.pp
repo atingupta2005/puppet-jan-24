@@ -9,16 +9,13 @@ apt::source { 'puppetlabs':
   },
 }
 
-apt::source { 'debian_unstable':
-  comment  => 'This is the iWeb Debian unstable mirror',
-  location => 'http://debian.mirror.iweb.ca/debian/',
-  release  => 'unstable',
-  repos    => 'main contrib non-free',
-  key      => {
-    'id'     => 'A1BD8E9D78F7FE5C3E65D8AF8B48AD6246925553',
-    'server' => 'subkeys.pgp.net',
-  },
+apt::keyring { 'puppetlabs-keyring.gpg':
+  source => 'https://apt.puppetlabs.com/keyring.gpg',
 }
 
-apt::ppa { 'ppa:drizzle-developers/ppa': }
+class { 'apt':
+  update => {
+    frequency => 'daily',
+  },
+}
 

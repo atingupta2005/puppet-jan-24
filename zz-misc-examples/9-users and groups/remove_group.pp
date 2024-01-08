@@ -1,3 +1,0 @@
-  group { 'logusers':
-    ensure => absent,
-  }
