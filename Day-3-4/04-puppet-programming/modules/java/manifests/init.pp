@@ -1,6 +1,6 @@
 class java {
 
-  package { [ 'openjdk-8-jdk'] : 
+  package { [ 'openjdk-17-jdk', 'openjdk-17-jre'] : 
     ensure => installed,
   }
 
