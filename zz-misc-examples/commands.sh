@@ -12,9 +12,12 @@ cd ~/puppet-jan-24/zz-misc-examples
 
 puppet apply 1-facts/using_facts_hash.pp
 puppet apply 2-files_and_directories/add_file_if_absent.pp
+cat /tmp/hello-file
 puppet apply 2-files_and_directories/directory.pp
-puppet apply 2-files_and_directories/extract_file.pp
+ls -ll /etc/site-conf
+ls -al /var/log/admin-app-log
 puppet apply 2-files_and_directories/file_based_on_fact.pp
+cat /etc/mysql/conf.d/tuning.cnf
 puppet apply 2-files_and_directories/manage_ini_files.pp
 puppet apply 2-files_and_directories/remove_files.pp
 puppet apply 2-files_and_directories/restart_service_if_file_changes.pp
