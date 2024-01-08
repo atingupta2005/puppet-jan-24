@@ -56,3 +56,7 @@ sudo tree /etc/puppetlabs/code/environments/production/modules
 sudo puppet agent -t
 
 curl localhost:8080
+
+# Copy chrony module to puppet server
+sudo cp -R ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/chrony /etc/puppetlabs/code/environments/production/modules/chrony
+sudo puppet agent -t
