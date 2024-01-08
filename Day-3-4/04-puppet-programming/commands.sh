@@ -24,6 +24,7 @@ sudo puppet resource package | grep tree
 
 
 ## Install PDK
+sudo apt-get purge pdk -y
 cd ~
 sudo apt-get install pdk -y
 wget https://apt.puppet.com/puppet-tools-release-focal.deb
