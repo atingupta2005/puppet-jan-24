@@ -47,14 +47,14 @@ sudo apt purge nginx* -y
 
 sudo puppet agent -t -vvv
 
-curl localhost:8181
+curl localhost:8484
 
 ls -al /etc/nginx/sites-enabled
-sudo cat /etc/nginx/sites-enabled/default | grep 8181
+sudo cat /etc/nginx/sites-enabled/default | grep 8484
 sudo cat /etc/nginx/sites-enabled/default
 ls -al /var/www/html/
-cat /var/www/html/index.nginx-debian.html
-curl localhost:8181
+sudo cat /var/www/html/index.nginx-debian.html | grep customizations
+curl localhost:8484
 
 ## -------------------- For manual deployment:: Do not run below commands --------------------
 sudo apt purge nginx* -y
