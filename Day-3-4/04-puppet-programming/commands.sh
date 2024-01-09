@@ -51,8 +51,8 @@ sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/*
 sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules
 
-sudo systemctl stop  tomcat9
-sudo systemctl start  tomcat9
+sudo apt purge tomcat* -y
+
 sudo systemctl status  tomcat9
 
 curl localhost:8282
