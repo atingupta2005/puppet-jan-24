@@ -43,12 +43,6 @@ sudo puppet agent -t -vvv
 
 curl localhost:8181
 
-sudo systemctl stop  nginx
-
-sudo systemctl start  nginx
-
-sudo systemctl status  nginx
-
 ls -al /etc/nginx/sites-enabled
 sudo cat /etc/nginx/sites-enabled/default | grep 8181
 sudo cat /etc/nginx/sites-enabled/default
@@ -56,11 +50,10 @@ ls -al /var/www/html/
 cat /var/www/html/index.nginx-debian.html
 curl localhost:8181
 
+## -------------------- For manual deployment:: Do not run below commands --------------------
 sudo apt purge nginx* -y
 sudo apt install nginx -y
 
-
---------------------
 sudo apt purge nginx* -y
 sudo rm -rf /etc/nginx
 sudo apt install nginx -y
