@@ -53,10 +53,8 @@ sudo tree /etc/puppetlabs/code/environments/production/modules
 
 sudo apt purge tomcat* -y
 
-sudo systemctl status  tomcat9
-
-curl localhost:8282
+curl localhost:8080
 
 sudo puppet agent -t
 
-curl localhost:8282
+curl localhost:8080
