@@ -37,6 +37,14 @@ sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules/nginx
 sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
 
+puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
+puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/config.pp
+puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/install.pp
+puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/service.pp
+
+puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp
+puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
+
 sudo apt purge nginx* -y
 
 sudo puppet agent -t -vvv
