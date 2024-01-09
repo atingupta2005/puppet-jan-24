@@ -10,6 +10,8 @@ puppet module install puppetlabs/windows
 puppet module install puppetlabs/registry
 puppet module install puppetlabs-chocolatey 
 
+puppet parser validate 01-install-choco.pp
+
 puppet apply 01-install-choco.pp
 puppet module upgrade puppetlabs-chocolatey --force
 puppet apply 02-chocolatey-notepadplusplus.pp
