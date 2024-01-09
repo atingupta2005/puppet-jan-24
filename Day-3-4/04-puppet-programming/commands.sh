@@ -76,11 +76,14 @@ curl localhost:8080
 
 sudo apt purge tomcat* -y
 sudo apt install tomcat9 -y
-sudo vim /etc/tomcat9/server.xml
+#sudo vim /etc/tomcat9/server.xml
 sudo cat /etc/tomcat9/server.xml | grep 8080
+curl localhost:8080
 sudo sed -i 's/Connector port="8080" /Connector port="8585" address="0.0.0.0" /g' /etc/tomcat9/server.xml
 sudo cat /etc/tomcat9/server.xml | grep 8585
 sudo systemctl stop  tomcat9
 sudo systemctl start  tomcat9
 sudo systemctl status  tomcat9
 curl localhost:8585
+
+sudo reboot
