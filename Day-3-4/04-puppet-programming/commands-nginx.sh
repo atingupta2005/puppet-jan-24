@@ -34,7 +34,8 @@ sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/nginx/templates/*.
 sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/nginx/manifests/*.pp /etc/puppetlabs/code/environments/production/modules/nginx/manifests/
 
 sudo tree /etc/puppetlabs/code/environments/production/manifests
-sudo tree /etc/puppetlabs/code/environments/production/modules
+sudo tree /etc/puppetlabs/code/environments/production/modules/nginx
+sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
 
 sudo apt purge nginx* -y
 
