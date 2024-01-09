@@ -1,6 +1,6 @@
 class tomcat::service {
 
-  service { 'tomcat':
+  service { 'tomcat9':
     ensure => running,
     enable => true,
   }    
