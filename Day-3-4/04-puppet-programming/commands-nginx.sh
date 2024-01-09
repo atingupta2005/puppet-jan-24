@@ -36,14 +36,11 @@ sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/nginx/manifests/*.
 sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules/nginx
 sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
+sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/homepage.pp
+sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
 
-puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
-puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/config.pp
-puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/install.pp
-puppet parser validate /etc/puppetlabs/code/environments/production/modules/nginx/manifests/service.pp
-
-puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp
-puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
+sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp
+sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
 
 sudo apt purge nginx* -y
 
