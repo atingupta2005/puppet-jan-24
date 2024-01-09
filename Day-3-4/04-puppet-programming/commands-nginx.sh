@@ -39,8 +39,8 @@ sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/in
 sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/homepage.pp
 sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
 
-sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp
-sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
+sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp  --values '{listen_port => "8586"}'
+sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp  --values '{h1_message => "Custom Msg"}'
 
 sudo apt purge nginx* -y
 
