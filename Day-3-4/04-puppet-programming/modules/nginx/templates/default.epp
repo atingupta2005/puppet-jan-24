@@ -23,8 +23,8 @@ String $listen_port = '8585',
 # Default server configuration
 #
 server {
-        listen <%= $listen_port -%> default_server;
-        listen [::]:<%= $listen_port -%> default_server;
+        listen <%= $listen_port -%>  default_server;
+        listen [::]:<%= $listen_port -%>  default_server;
 
         # SSL configuration
         #
