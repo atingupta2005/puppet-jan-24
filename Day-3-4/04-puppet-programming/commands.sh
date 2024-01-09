@@ -45,15 +45,13 @@ exit
 ## Copy code of Java and Tomcat module from GitHub
 sudo mv /etc/puppetlabs/code/environments/production/manifests/site.pp /etc/puppetlabs/code/environments/production/manifests/site.pp.bkp
 sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/node-def-1.pp /etc/puppetlabs/code/environments/production/manifests/node-def-1.pp
-sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/java/manifests/init.pp /etc/puppetlabs/code/environments/production/modules/java/manifests/init.pp
-sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/files/server.xml /etc/puppetlabs/code/environments/production/modules/tomcat/files/server.xml
+sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/java/manifests/*.pp /etc/puppetlabs/code/environments/production/modules/java/manifests/
+sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/templates/*.epp /etc/puppetlabs/code/environments/production/modules/tomcat/templates/
 
-sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/init.pp /etc/puppetlabs/code/environments/production/modules/tomcat/manifests/init.pp
-sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/config.pp /etc/puppetlabs/code/environments/production/modules/tomcat/manifests/config.pp
-sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/install.pp /etc/puppetlabs/code/environments/production/modules/tomcat/manifests/install.pp
+sudo cp ~/puppet-jan-24/Day-3-4/04-puppet-programming/modules/tomcat/manifests/*.pp /etc/puppetlabs/code/environments/production/modules/tomcat/manifests/
 
 sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules
 sudo puppet agent -t
 
-curl localhost:8181
+curl localhost:8282
