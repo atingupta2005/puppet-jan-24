@@ -9,13 +9,13 @@ git clone https://github.com/atingupta2005/puppet-jan-24/
 cd ~/puppet-jan-24/Day-3-4
 
 ## Install PDK
-sudo apt-get purge pdk -y
+#sudo apt-get purge pdk -y
 cd ~
-sudo apt-get install pdk -y
-wget https://apt.puppet.com/puppet-tools-release-focal.deb
-sudo dpkg -i puppet-tools-release-focal.deb
-sudo apt-get update
-sudo apt-get install pdk -y
+#sudo apt-get install pdk -y
+#wget https://apt.puppet.com/puppet-tools-release-focal.deb
+#sudo dpkg -i puppet-tools-release-focal.deb
+#sudo apt-get update
+#sudo apt-get install pdk -y
 
 ## Create Custom Modules
 sudo su
