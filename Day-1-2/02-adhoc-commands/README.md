@@ -94,11 +94,12 @@ puppet apply -e 'package { "tree": ensure => absent }'
 
 ## Managing certificates (On server):
 ```
-puppetserver ca list
-puppetserver ca list --all
-puppetserver ca sign <name>
+
+sudo /opt/puppetlabs/bin/puppetserver ca list
+sudo /opt/puppetlabs/bin/puppetserver ca list --all
+sudo /opt/puppetlabs/bin/puppetserver ca sign --certname <name>
 sudo puppet node purge <CERTNAME>
-puppetserver ca clean --certname <name> #Removes cert
+sudo /opt/puppetlabs/bin/puppetserver ca clean --certname <name> #Removes cert
 ```
 
 # Puppet Server Configuration (Server)
