@@ -1,6 +1,8 @@
 # Puppet Programming
 ## Clone GIT Repo
 cd ~
+explorer .
+## Delete puppet-jan-24 directory
 rm  ~/puppet-jan-24
 git clone https://github.com/atingupta2005/puppet-jan-24/
 
