@@ -39,7 +39,7 @@ sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/in
 
 sudo apt purge nginx* -y
 
-sudo puppet agent -t
+sudo puppet agent -t -vvv
 
 curl localhost:8181
 
