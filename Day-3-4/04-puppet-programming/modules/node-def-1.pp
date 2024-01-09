@@ -1,5 +1,5 @@
 node 'Default' {
 
-   include tomcat
+   include nginx
 
 }
