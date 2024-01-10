@@ -4,6 +4,7 @@ cd ~
 Remove-Item -Recurse -Force ~/puppet-jan-24
 git clone https://github.com/atingupta2005/puppet-jan-24/
 cd ~/puppet-jan-24/Day-5-6/03-managing-windows
+
 puppet module install puppetlabs/windows
 puppet module install puppetlabs/registry
 puppet module install puppetlabs-chocolatey 
@@ -26,3 +27,6 @@ puppet apply 11-scheduled-tasks-3.pp
 puppet apply 12-scheduled-tasks-4.pp
 puppet apply 13-scheduled-tasks-5.pp
 puppet apply 14-windows_env.pp
+
+# #See all scheduled tasks
+Get-ScheduledTask
