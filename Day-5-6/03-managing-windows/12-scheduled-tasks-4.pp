@@ -2,7 +2,7 @@
 scheduled_task { 'Disk Cleanup On Restart':
   ensure        => 'present',
   compatibility => 2,
-  command       => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  command       => "C:\\Windows\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   arguments     => '-File "C:\\hello-script.ps1"',
   enabled       => 'true',
   trigger       => [{

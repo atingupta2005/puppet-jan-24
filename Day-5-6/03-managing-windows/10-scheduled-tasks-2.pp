@@ -1,5 +1,5 @@
 scheduled_task { 'Disk Cleanup Nightly':
-  command   => "$::system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  command   => "C:\\Windows\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   arguments => '-File "C:\\hello-script.ps1"',
   enabled   => 'true',
   trigger   => [{
