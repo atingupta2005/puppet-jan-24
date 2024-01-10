@@ -21,15 +21,20 @@ sudo cp ~/puppet-jan-24/Day-7-8/01-puppet-programming/modules/nginx/templates/*.
 
 sudo cp ~/puppet-jan-24/Day-7-8/01-puppet-programming/modules/nginx/manifests/*.pp /etc/puppetlabs/code/environments/production/modules/nginx/manifests/
 
+sudo cp ~/puppet-jan-24/Day-7-8/01-puppet-programming/modules/nginx/hiera.yaml /etc/puppetlabs/code/environments/production/modules/nginx/hiera.yaml
+
+sudo cp -R ~/puppet-jan-24/Day-7-8/01-puppet-programming/modules/nginx/data /etc/puppetlabs/code/environments/production/modules/nginx/
+
 sudo tree /etc/puppetlabs/code/environments/production/manifests
 sudo tree /etc/puppetlabs/code/environments/production/modules/nginx
-sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/init.pp
-sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/manifests/homepage.pp
-sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp
-sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp
 
-sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/default.epp  --values '{listen_port => "8586 "}'
-sudo puppet epp render /etc/puppetlabs/code/environments/production/modules/nginx/templates/index.nginx-debian.html.epp  --values '{h1_message => "Custom Msg"}'
+
+sudo puppet lookup nginx::install::package_name
+sudo puppet lookup nginx::install::package_status
+sudo puppet lookup nginx::homepage::h1_message
+sudo puppet lookup nginx::service::package_name
+sudo puppet lookup nginx::config::listen_port
+sudo puppet lookup nginx::config::config_file_path
 
 sudo apt purge nginx* -y
 
