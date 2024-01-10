@@ -2,3 +2,4 @@
 nginx::homepage::file_path: "/var/www/html/index.nginx-debian.html"
 nginx::homepage::h1_message: "Hi Team, It works after customizations ! - From Debian"
 nginx::config::listen_port: "8282"
+nginx::config::notify_service: "nginx"
