@@ -4,6 +4,6 @@ scheduled_task { 'example_notepad':
   command       => 'C:\\Windows\\System32\\notepad.exe',
   trigger       => [{
     schedule => 'logon',
-    user_id  => 'MyDomain\\SomeUser'
+    user_id  => 'azureuser'
   }],
 }

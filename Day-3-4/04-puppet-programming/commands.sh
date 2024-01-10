@@ -7,6 +7,7 @@ git clone https://github.com/atingupta2005/puppet-jan-24/
 
 ## Run Various Manifests
 cd ~/puppet-jan-24/Day-3-4
+sudo puppet parser validate 04-puppet-programming/manifests/01-hash.pp
 sudo puppet apply 04-puppet-programming/manifests/01-hash.pp
 sudo puppet apply 04-puppet-programming/manifests/02-hash2.pp
 sudo puppet apply 04-puppet-programming/manifests/03-hashes.pp
