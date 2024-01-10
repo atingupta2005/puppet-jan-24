@@ -35,17 +35,18 @@ sudo puppet lookup nginx::homepage::h1_message
 sudo puppet lookup nginx::service::package_name
 sudo puppet lookup nginx::config::listen_port
 sudo puppet lookup nginx::config::config_file_path
+sudo puppet lookup nginx::config::notify_service
 
 sudo apt purge nginx* -y
 
 sudo puppet agent -t -vvv
 
-curl localhost:8484
+curl localhost:8282
 
 ls -al /etc/nginx/sites-enabled
-sudo cat /etc/nginx/sites-enabled/default | grep 8484
+sudo cat /etc/nginx/sites-enabled/default | grep 8282
 sudo cat /etc/nginx/sites-enabled/default
 ls -al /var/www/html/
 sudo cat /var/www/html/index.nginx-debian.html | grep customizations
-curl localhost:8484
+curl localhost:8282
 
