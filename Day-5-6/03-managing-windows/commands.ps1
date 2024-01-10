@@ -1,16 +1,8 @@
 # Puppet Programming
 ## Clone GIT Repo
-cd ~
-<<<<<<< HEAD:Day-5-6/03-managing-windows/commands.ps1
 Remove-Item -Recurse -Force ~/puppet-jan-24
-=======
-explorer .
-## Delete puppet-jan-24 directory
->>>>>>> bc3bb795d9a1e643390cbbdd23afc0ace6866a4b:Day-5-6/03-managing-windows/commands.sh
 git clone https://github.com/atingupta2005/puppet-jan-24/
-
 cd ~/puppet-jan-24/Day-5-6/03-managing-windows
-
 puppet module install puppetlabs/windows
 puppet module install puppetlabs/registry
 puppet module install puppetlabs-chocolatey 
