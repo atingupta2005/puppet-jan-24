@@ -1,0 +1,5 @@
+node 'Default' {
+
+   include nginx
+
+}

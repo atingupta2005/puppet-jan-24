@@ -1,0 +1,4 @@
+---
+nginx::homepage::file_path: "/var/www/html/index.nginx-centos.html"
+nginx::homepage::h1_message: "Hi Team, It works after customizations ! - From CentOS"
+nginx::config::listen_port: "8181"

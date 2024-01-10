@@ -25,6 +25,7 @@ sudo systemctl start  grafana-server
 sudo systemctl status  grafana-server
 curl http://localhost:3000/login
 sudo puppet apply 06-linux_users.pp
+sudo apt purge tree -y
 sudo puppet apply 07-notify_class-inheritance.pp
 
 

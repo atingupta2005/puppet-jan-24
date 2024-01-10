@@ -10,7 +10,7 @@ class common {
 class my_notification  inherits common {
     notify { 'this is the my_notification': }
 
-    package { 'nginx':
+    package { 'tree':
         require => Exec['apt-update'],
         ensure  => installed,
     }

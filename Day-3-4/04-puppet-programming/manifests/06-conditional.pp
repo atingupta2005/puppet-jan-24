@@ -6,3 +6,11 @@ if $::timezone == 'UTC' {
   notify { "$::timezone is not UTC": }
 }
 
+
+
+unless $::timezone == 'UTC' {
+  notify { 'Not the Universal Time Coordinated': }
+} else {
+  notify { "Timezone is UTC": }
+}
+

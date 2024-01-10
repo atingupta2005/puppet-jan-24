@@ -1,0 +1,7 @@
+---
+nginx::install::package_name: "nginx"
+nginx::install::package_status: present
+nginx::homepage::h1_message: "Hi Team, It works after customizations ! - From Common"
+nginx::service::package_name: "nginx"
+nginx::config::listen_port: "8080"
+nginx::config::config_file_path: "/etc/nginx/sites-enabled/default"

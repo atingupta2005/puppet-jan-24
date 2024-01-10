@@ -1,7 +1,19 @@
-user {"deploy" :
-    ensure       => present, 
-    uid          => 5001, 
-    password     => '$1$WD98.uaZ$cxx30x/K3FXQrljxsvBIu/',
-    home         => '/home/deploy', 
-    managehome   => true, 
+## Generate password using below command on linux terminal
+   ## openssl passwd -1
+### Note above command generates seperate hash each time for the same input
+
+# Below password is - Pass@4568
+$user_password = Sensitive('$1$UnAxMplD$yib2Gl9fmHSshC/rAWaoX1')
+#$user_password = '$1$Jd1PmCqX$Fa1YJkGvVHAHPaKaRjnAB0'
+
+$username = "sampleuser-1"
+
+user {$username :
+    ensure       => present,
+    password     => $user_password,
+    home         => "/home/$username",
+    managehome   => true,
 }
+
+
+notify { "user_password ${user_password}":}

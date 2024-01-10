@@ -21,6 +21,9 @@ id deploy
 sudo puppet resource user | grep deploy
 sudo puppet resource package | grep tree
 
+sudo puppet module install puppetlabs-stdlib
+sudo puppet apply 04-puppet-programming/manifests/10-create-users-multiple.pp
+
 
 ## Install PDK
 #sudo apt-get purge pdk -y
