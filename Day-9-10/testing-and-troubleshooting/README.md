@@ -7,19 +7,19 @@
 - Location: /var/log/puppetlabs/
 
 # Troubleshooting puppet infrastructure run commands
-- All puppet infrastructure run commands require you to act as the root user on all nodes that the command touches
+- All puppet infrastructure run commands require you to act as the root user
 
 # Troubleshooting connections between components
 - Agent nodes must be able to communicate with the primary server in order to retrieve configurations.
   - If agents can't reach the primary server, running telnet <PRIMARY_HOSTNAME> 8140 returns a Name or service not known error.
-     - Verify that the primary server is reachable at a DNS name your agents recognize. If you aren't sure how to do this, refer to: Agents aren't using the primary server's valid DNS name
+     - Verify that the primary server is reachable at a DNS name your agents recognize.
      - Verify that the pe-puppetserver service is running
   - Agent certificates must be signed by the primary server.
   - Agents trust the primary server only if they contact it at one of the valid hostnames specified when the primary server was installed.
      - To edit the primary server's hostname on agent nodes, open the /etc/puppetlabs/puppet/puppet.conf file, and change the server setting to a valid DNS name.
      - To reset the primary server's valid DNS names, log in as root (or the Administrator) and run:
 ```
-puppet infrastructure run regenerate_primary_certificate --dns_alt_names=<COMMA-SEPARATED_LIST_OF_DNS_NAMES>
+sudo puppet infrastructure run regenerate_primary_certificate --dns_alt_names=<COMMA-SEPARATED_LIST_OF_DNS_NAMES>
 ```
 - The date and time must be in sync on the primary server and agent nodes.
 - The date and time must be in sync when certificates are created.
