@@ -59,5 +59,5 @@ mkdir /puppet_bkp
 
 ```
 sudo su
-/opt/puppetlabs/bin/puppet-backup restore --dir=/puppet_bkp
+/opt/puppetlabs/bin/puppet-backup restore /puppet_bkp/pe_backup-2024-01-11_07.27.34_UTC.tgz
 ```

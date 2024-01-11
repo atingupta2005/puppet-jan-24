@@ -1,6 +1,6 @@
 include stdlib
 
-$users = {
+$my_users = {
   'Atin Gupta' => present,
   'Amit Mittal' => absent,
   'Sumit Agarwal' => present, 
@@ -20,7 +20,7 @@ $users = {
 $user_password = Sensitive('$1$UnAxMplD$yib2Gl9fmHSshC/rAWaoX1')
 #$user_password = '$1$Jd1PmCqX$Fa1YJkGvVHAHPaKaRjnAB0'
 
-$users.each |$username, $status| {
+$my_users.each |$username, $status| {
     $username_downcase = $username.downcase()
     $username_clean = regsubst($username_downcase, '\s+', '')
     

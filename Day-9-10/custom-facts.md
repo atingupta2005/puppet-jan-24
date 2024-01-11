@@ -6,6 +6,7 @@
 ## Creating custom facts
 ### Move into the nginx module directory:
 ```
+sudo su
 mkdir /etc/puppetlabs/code/environments/production/modules/nginx/
 cd /etc/puppetlabs/code/environments/production/modules/nginx/
 ```
