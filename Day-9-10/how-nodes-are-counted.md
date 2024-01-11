@@ -3,7 +3,7 @@
 - Your license limits you to a certain number of active nodes before you hit your bursting limit
 - If you hit your bursting limit on four days during a month, you must purchase a license for more nodes or remove some nodes from your inventory.
 
-## Note: 
+#### Note: 
  - Node in this context includes agent nodes, agentless nodes, primary servers, compilers, nodes running in noop mode, and nodes that have been purged but had prior activity within the same calendar month.
 
 ## Nodes included in the node count

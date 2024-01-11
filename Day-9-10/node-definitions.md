@@ -47,4 +47,4 @@ node /^(one|two)\.example\.com$/ {
   - Puppet uses the default node.
 
 
-### Note: If it doesn't find one, catalog compilation fails. It's a good idea to always have a default node definition.
+#### Note: If it doesn't find one, catalog compilation fails. It's a good idea to always have a default node definition.
