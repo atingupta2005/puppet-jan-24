@@ -18,6 +18,7 @@ sudo /opt/puppetlabs/bin/puppet config print environmentpath
 sudo su
 cd /etc/puppetlabs/code/environments
 mkdir -p /etc/puppetlabs/code/environments/devel/{manifests,modules}
+tree /etc/puppetlabs/code/environments/devel
 nano /etc/puppetlabs/code/environments/devel/manifests/site.pp
 ```
 
@@ -29,8 +30,12 @@ content => 'This is devel',
 }
 ```
 
+- Add a new node which will be used for development/testing purpose
+- Create environment group and add this new node to this group
+
 ## Run puppet agent on the node and verify that the devel code was delivered:
 ```
+sudo /opt/puppetlabs/bin/puppet agent -t
 sudo /opt/puppetlabs/bin/puppet agent -t --environment devel
 cat /tmp/devel
 ```

@@ -6,6 +6,7 @@
 ## Creating custom facts
 ### Move into the nginx module directory:
 ```
+mkdir /etc/puppetlabs/code/environments/production/modules/nginx/
 cd /etc/puppetlabs/code/environments/production/modules/nginx/
 ```
 
@@ -60,3 +61,10 @@ Facter.add("tzname") do
 end
 ```
 
+```
+sudo puppet agent -t
+facter -p web
+facter -p users
+facter -p home
+facter -p tzname
+```

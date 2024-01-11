@@ -29,7 +29,6 @@
 - View your daily node count in the console by navigating to the License page and scrolling to the Calendar month usage section
 - This section also contains information about your subscription expiration date and license warnings, such as your license being expired or out of compliance.
 
-- To see daily node usage information on the command line, use the Usage endpoints.
 
 ## Removing nodes
 - If you have unused nodes cluttering your inventory and are concerned about reaching your limit, read about removing them in Adding and removing agent nodes and Adding and removing agentless nodes.
