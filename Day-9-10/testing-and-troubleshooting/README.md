@@ -1,6 +1,3 @@
-# Create Tests for Our Code
-- 
-
 # Log locations
 ## Primary server logs
 - Location: /var/log/puppetlabs/puppetserver/*.log
@@ -49,7 +46,9 @@ sysctl -w kernel.shmall=<your shmall calculation>
 
 ## Take backup
 ```
-puppet-backup create --dir=<BACKUP_DIRECTORY>
+sudo su
+mkdir /puppet_bkp
+/opt/puppetlabs/bin/puppet-backup create --dir=/puppet_bkp
 ```
 
 - The puppet-backup create command might fail if any gem installed on the Puppet Server isn't present on the agent environment on the primary server. If the gem is missing or has a different version on the primary server's agent environment, you get this error: command puppet infrastructure recover_configuration failed.
@@ -59,9 +58,6 @@ puppet-backup create --dir=<BACKUP_DIRECTORY>
 - This must be the same PE version used to create the backup files.
 
 ```
-sudo puppet-backup restore <BACKUP-FILENAME>
+sudo su
+/opt/puppetlabs/bin/puppet-backup restore --dir=/puppet_bkp
 ```
-
-# Using PRY to Inspect the Puppet Server
-
-
