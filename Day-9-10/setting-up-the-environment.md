@@ -42,19 +42,25 @@ cat /tmp/devel
 
 ## Assign nodes to environments via the agent's config file
 - Open the agent's puppet.conf file in an editor.
-- Find the environment setting in either the agent or main section.
+```
+sudo nano /etc/puppetlabs/puppet/puppet.conf
+```
+- Add the environment setting in either the agent or main section.
 - Set the value of the environment setting to the name of the environment you want the agent to be assigned to.
+```
+environment = devel
+```
 
 ## Global settings for configuring environments
 - The settings in the primary server's puppet.conf file configure how Puppet finds and uses environments.
 
-### environmentpath
- - The environmentpath setting is the list of directories where Puppet looks for environments. 
- - The default value for environmentpath is $codedir/environments.\
- 
  ## How to set the default Puppet environment to something other than production?
  - This is the environment setting in the main puppet.conf configuration file
  
+```
+sudo nano /etc/puppetlabs/puppet/puppet.conf
+```
+
 
 ### Example
  ```
