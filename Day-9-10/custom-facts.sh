@@ -5,6 +5,7 @@ sudo mkdir -p /etc/puppetlabs/code/environments/production/modules/nginx/
 sudo mkdir -p /etc/puppetlabs/code/environments/production/modules/nginx/lib/facter
 
 ### Copy and open a file called web.rb in the plugin location:
+cd ~/puppet-jan-24/Day-9-10
 ls web.rb
 sudo cp web.rb /etc/puppetlabs/code/environments/production/modules/nginx/lib/facter
 sudo ls /etc/puppetlabs/code/environments/production/modules/nginx/lib/facter
