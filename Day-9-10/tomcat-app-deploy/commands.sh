@@ -6,13 +6,18 @@ git clone https://github.com/atingupta2005/puppet-jan-24/
 ## Run Various Manifests
 cd ~/puppet-jan-24/Day-9-10/tomcat-app-deploy
 
+
+sudo rm -rf  /etc/puppetlabs/code/environments/production/modules/tomcat
+sudo rm -rf  /etc/puppetlabs/code/environments/production/modules/stdlib
+
+sudo puppet module install puppetlabs-stdlib
+sudo puppet module upgrade puppetlabs-stdlib
 sudo puppet module install puppetlabs-tomcat
-puppet module install puppetlabs-tomcat
 
 sudo /opt/tomcat/bin/shutdown.sh
 sudo rm -rf /opt/tomcat
 curl localhost:8086
-sudo reboot  ## Only if needed
+#sudo reboot  ## Only if needed
 
 sudo puppet apply install-tomcat.pp
 
