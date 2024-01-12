@@ -20,6 +20,8 @@ sudo cat /etc/hosts
 sudo /opt/puppetlabs/bin/puppet apply manifests/04-remove_unmanaged.pp
 sudo cat /etc/hosts
 
+sudo puppet apply manifests/05-binary.pp
+
 sudo puppet apply manifests/06-define-resource-types.pp
 sudo ls  /tmp/*.txt
 
