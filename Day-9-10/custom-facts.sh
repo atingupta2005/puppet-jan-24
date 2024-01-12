@@ -14,10 +14,10 @@ sudo cat /etc/puppetlabs/code/environments/production/modules/nginx/lib/facter/w
 
 sudo puppet agent -t
 
-facter -p web
+sudo facter -p web
 
-facter -p users
+sudo facter -p users
 
-facter -p home
+sudo facter -p home
 
-facter -p tzname
+sudo facter -p tzname
