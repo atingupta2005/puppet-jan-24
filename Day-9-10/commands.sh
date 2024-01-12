@@ -20,6 +20,9 @@ sudo cat /etc/hosts
 sudo /opt/puppetlabs/bin/puppet apply manifests/04-remove_unmanaged.pp
 sudo cat /etc/hosts
 
+sudo puppet apply manifests/06-define-resource-types.pp
+sudo ls  /tmp/*.txt
+
 sudo apt install xdot -y
 sudo puppet apply --graph --noop manifests/01-iterators-and-loops.pp
 sudo ls /opt/puppetlabs/puppet/cache/state/graphs/

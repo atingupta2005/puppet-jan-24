@@ -1,31 +1,34 @@
 define create_user_group (
-  String user = "${title}",
-  String group
+  String $user = "${title}",
+  String $group,
+  $status
 ) {
+    $mygroup = "$group-$user"
+    
     user {$user :
-        ensure       => present,
-        home         => "/home/$username",
-        managehome   => true,
-        groups       => ${group},
-        require => Group[${group}],
+        ensure       => $status,
+        groups       => $group,
+        require => Group[$mygroup],
     }
 
-    group { ${group}: }
-      ensure  => 'present',
+    group { $mygroup:
+      ensure       => $status,
     }
     
-    file { '/home/${user}/welcome.txt':
-      user => ${user},
-      group => ${group},
-      content => "We welcome ${user} to the group ${group}",
+    file { "/tmp/${user}-welcome.txt":
+      content => "We welcome ${user} to the group ${mygroup}",
+      ensure       => $status,
+      require => User[$user],
     }
 }
 
 
 create_user_group {'sumit':
   group => 'development',
+  status => present,
 }
 
-create_user_group {'Ankit':
+create_user_group {'ankit':
   group => 'development',
+  status => present,
 }
