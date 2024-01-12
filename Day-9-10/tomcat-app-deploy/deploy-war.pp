@@ -1,6 +1,6 @@
 include tomcat
 
-tomcat::war { 'sample.war':
-  catalina_base => '/opt/tomcat9/first',
-  war_source    => '/opt/tomcat9/webapps/docs/appdev/sample/sample.war',
+tomcat::war { 'helloworld.war':
+  catalina_base => '/opt/tomcat/helloworld',
+  war_source    => 'https://github.com/aeimer/java-example-helloworld-war/raw/master/dist/helloworld.war',
 }
