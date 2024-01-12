@@ -7,7 +7,7 @@ define create_user_group (
     
     user {$user :
         ensure       => $status,
-        groups       => $group,
+        groups       => $mygroup,
         require => Group[$mygroup],
     }
 

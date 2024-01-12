@@ -9,9 +9,10 @@ cd ~/puppet-jan-24/Day-9-10/tomcat-app-deploy
 sudo puppet module install puppetlabs-tomcat
 puppet module install puppetlabs-tomcat
 
+sudo /opt/tomcat/bin/shutdown.sh
 sudo rm -rf /opt/tomcat
-
 curl localhost:8086
+sudo reboot  ## Only if needed
 
 sudo puppet apply install-tomcat.pp
 
